@@ -1,0 +1,86 @@
+{
+  "resume": [
+    {
+      "id": 1,
+      "basics": {
+        "name": "DIEGO HUMBERTO REYMY AGUILAR",
+        "label": "Frontend Developer",
+        "picture": "profile.jpg",
+        "email": "diegoreymy@gmail.com",
+        "phone": "+55 (81) 98114-3004",
+        "website": "http://johndoe.com",
+        "summary": "Sou desenvolvedor de software e profissional de TI, adaptável, focado no aprendizado contínuo, com mais de 4 anos de experiência na estruturação, desenvolvimento e manutenção de aplicativos web, com muita disposição e atenção aos detalhes. Sou formado em ciência da computação. Falo espanhol e português fluentemente. Posso me comunicar em inglês e faço aulas particulares três vezes por semana desde outubro de 2019. Atualmente, estou trabalhando em período integral como desenvolvedor front-end na Zup Innovation.",
+        "profiles": [
+          {
+            "network": "Linkedin",
+            "username": "diegoreymy",
+            "url": "https://linkedin.com/in/diegoreymy"
+          },
+          {
+            "network": "GitHub",
+            "username": "diegoreymy",
+            "url": "https://github.com/diegoreymy"
+          }
+        ]
+      },
+      "work": [
+        {
+          "company": "Zup Innovation",
+          "position": "Frontend Developer",
+          "startDate": "01/2020",
+          "endDate": "actual",
+          "summary": "Atualmente, estou trabalhando em um projeto web de busca e comparação de investimentos para um grande banco brasileiro. Desenvolvido com Angular 8, tive a oportunidade de fazer parte da estruturação e planejamento do frontend do projeto, com foco em acessibilidade, usabilidade e performance. Desde o começo do projeto temos implementado boas práticas e alta cobertura de testes unitários.",
+          "highlights": [
+            "Angular8",
+            "HTML",
+            "CSS",
+            "AWS",
+            "Jest",
+            "Javascript",
+            "Typescript"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "institution": "Instituto Universitario de la Frontera",
+          "area": "Informática",
+          "studyType": "Superior",
+          "startDate": "2007",
+          "endDate": "2011"
+        }
+      ],
+      "skills": [
+        {
+          "category": "Frontend",
+          "name": "JavaScript",
+          "level": 75
+        },
+        {
+          "category": "Backend",
+          "name": "Node.js",
+          "level": 48
+        },
+        {
+          "category": "Otros",
+          "name": "AWS",
+          "level": 15
+        }
+      ],
+      "languages": [
+        {
+          "language": "Español",
+          "fluency": "Nativo"
+        },
+        {
+          "language": "Portugués",
+          "fluency": "Fluente"
+        },
+        {
+          "language": "English",
+          "fluency": "Intermedio"
+        }
+      ]
+    }
+  ]
+}
