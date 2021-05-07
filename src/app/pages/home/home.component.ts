@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  form = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
-  ngOnInit(): void {
+  constructor(
+    private formBuilder: FormBuilder,
+  ) {
+    this.buildForm();
+  }
+
+  ngOnInit() {
+  }
+
+  login(event: Event) {
+    event.preventDefault();
+    if (this.form.valid) {
+      const value = this.form.value;
+      console.log(value)
+    }
+  }
+
+  register(event: Event) {
+    event.preventDefault();
+    if (this.form.valid) {
+      const value = this.form.value;
+      console.log(value)
+    }
+  }
+
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
 
 }

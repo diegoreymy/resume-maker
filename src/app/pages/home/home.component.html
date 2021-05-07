@@ -1,1 +1,29 @@
-<p>home works!</p>
+<section class="login-container">
+    <form [formGroup]="form">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-xs">
+                <mat-form-field>
+                  <input placeholder="email" formControlName="email" matInput type="email">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs">
+                <mat-form-field>
+                  <input placeholder="password" formControlName="password" matInput type="password">
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button (click)="login($event)" [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
+            <button (click)="register($event)" type="button" mat-raised-button type="submit">Registrarse</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+</section>
