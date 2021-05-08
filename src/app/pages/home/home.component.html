@@ -3,7 +3,7 @@
   <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-lg-2 col-md-3 col-sm-4 col-6">
 </div>
 <section class="row justify-content-center">
-  <div class="col col col-12 col-lg-6">
+  <div class="col col col-12 col-md-6">
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Acceso</h3>
@@ -18,10 +18,10 @@
             <input type="password" formControlName="password" class="form-control" id="inputPassword">
           </div>
           <div class="row mb-3">
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="d-grid gap-2 col-12 col-md-6 mb-3 mb-md-0 mx-auto">
               <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">Entrar</button>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="d-grid gap-2 col-12 col-md-6 mx-auto">
             <button type="submit" [disabled]="form.invalid" (click)="register($event)" class="btn btn-secondary">Registrase</button>
           </div>
         </div>
