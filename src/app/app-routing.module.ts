@@ -9,8 +9,8 @@ const routes: Routes = [
       loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
     },
     {
-      path: 'profile',
-      loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
+      path: 'resume',
+      loadChildren: () => import('./pages/resume/resume.module').then(m => m.ResumeModule)
     },
     {
       path: 'admin',

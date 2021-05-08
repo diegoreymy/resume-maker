@@ -2,13 +2,13 @@
   "resume": [
     {
       "id": 1,
+      "nickname": "diegoreymy",
       "basics": {
         "name": "DIEGO HUMBERTO REYMY AGUILAR",
         "label": "Frontend Developer",
         "picture": "profile.jpg",
         "email": "diegoreymy@gmail.com",
         "phone": "+55 (81) 98114-3004",
-        "website": "http://johndoe.com",
         "summary": "Sou desenvolvedor de software e profissional de TI, adaptável, focado no aprendizado contínuo, com mais de 4 anos de experiência na estruturação, desenvolvimento e manutenção de aplicativos web, com muita disposição e atenção aos detalhes. Sou formado em ciência da computação. Falo espanhol e português fluentemente. Posso me comunicar em inglês e faço aulas particulares três vezes por semana desde outubro de 2019. Atualmente, estou trabalhando em período integral como desenvolvedor front-end na Zup Innovation.",
         "profiles": [
           {
