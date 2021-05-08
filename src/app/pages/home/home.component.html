@@ -1,29 +1,27 @@
-<section class="login-container">
-    <form [formGroup]="form">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>Login</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="row">
-              <div class="col-xs">
-                <mat-form-field>
-                  <input placeholder="email" formControlName="email" matInput type="email">
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs">
-                <mat-form-field>
-                  <input placeholder="password" formControlName="password" matInput type="password">
-                </mat-form-field>
-              </div>
-            </div>
-          </mat-card-content>
-          <mat-card-actions>
-            <button (click)="login($event)" [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
-            <button (click)="register($event)" type="button" mat-raised-button type="submit">Registrarse</button>
-          </mat-card-actions>
-        </mat-card>
-      </form>
+
+<div class="row justify-content-center">
+  <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-lg-2 col-md-3 col-sm-4 col-6">
+</div>
+<section class="row justify-content-center">
+  <div class="col col col-12 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Acceso</h3>
+        <h4 class="card-subtitle mb-4 text-muted">Por favor, coloque abajo sus credenciales para poder ingresar.</h4>
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Dirección de correo electrónico</label>
+            <input type="email" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-4">
+            <label for="inputPassword" class="form-label">Contraseña</label>
+            <input type="password" formControlName="password" class="form-control" id="inputPassword">
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">Entrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>

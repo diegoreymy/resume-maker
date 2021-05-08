@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
   ) {
     this.buildForm();
   }
@@ -27,14 +29,7 @@ export class HomeComponent implements OnInit {
     if (this.form.valid) {
       const value = this.form.value;
       console.log(value)
-    }
-  }
-
-  register(event: Event) {
-    event.preventDefault();
-    if (this.form.valid) {
-      const value = this.form.value;
-      console.log(value)
+      this.router.navigate(['/admin']);
     }
   }
 
