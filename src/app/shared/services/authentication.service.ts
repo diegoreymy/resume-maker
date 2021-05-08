@@ -18,7 +18,7 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-    this.afAuth.authState;
+    return this.afAuth.authState;
   }
   
 }
