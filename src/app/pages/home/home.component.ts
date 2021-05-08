@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LOGIN_ERROR_MESSAGES } from 'src/app/shared/constants/loginErrorMessages.constant';
 import { IUserLogin } from 'src/app/shared/models/user.model';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
     password: ""
   }
 
+  errorMessage: string = '';
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -33,18 +36,32 @@ export class HomeComponent implements OnInit {
   }
 
   login(event: Event) {
+    this.errorMessage = "";
     event.preventDefault();
     if (this.form.valid) {
       this.setUser(this.form);
-      this.authenticationService.signIn(this.user).then((result: any) => {
+      this.authenticationService.signIn(this.user).then(() => {
         this.router.navigate(['admin']);
       }).catch((error: any) => {
-        console.log(error)
+        this.printErrorByCode(error.code);
       })
     }
   }
 
-  private buildForm() {
+  register(event: Event) {
+    this.errorMessage = "";
+    event.preventDefault();
+    if (this.form.valid) {
+      this.setUser(this.form);
+      this.authenticationService.signUp(this.user).then(() => {
+        this.router.navigate(['admin']);
+      }).catch((error: any) => {
+        this.printErrorByCode(error.code);
+      })
+    }
+  }
+
+  buildForm() {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -57,4 +74,12 @@ export class HomeComponent implements OnInit {
     this.user.password = password;
   }
 
+  printErrorByCode(code: string) {
+    code = code.split('/')[1];
+    if (LOGIN_ERROR_MESSAGES[code]) {
+      this.errorMessage = LOGIN_ERROR_MESSAGES[code];
+    } else {
+      this.errorMessage = 'ha ocurrido un error desconocido! Intente nuevamente mas tarde. ';
+    }
+  }
 }

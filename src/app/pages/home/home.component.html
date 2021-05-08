@@ -17,10 +17,16 @@
             <label for="inputPassword" class="form-label">Contraseña</label>
             <input type="password" formControlName="password" class="form-control" id="inputPassword">
           </div>
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">Entrar</button>
+          <div class="row mb-3">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">Entrar</button>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" [disabled]="form.invalid" (click)="register($event)" class="btn btn-secondary">Registrase</button>
           </div>
+        </div>
         </form>
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
       </div>
     </div>
   </div>

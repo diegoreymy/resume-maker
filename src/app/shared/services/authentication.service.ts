@@ -17,6 +17,10 @@ export class AuthenticationService {
     return this.afAuth.signInWithEmailAndPassword(user.email, user.password)
   }
 
+  signUp(user: IUserLogin) {
+    return this.afAuth.createUserWithEmailAndPassword(user.email, user.password)
+  }
+
   isLoggedIn() {
     return this.afAuth.authState;
   }
