@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
     if (this.form.valid) {
       this.setUser(this.form);
       this.authenticationService.signIn(this.user).then((result: any) => {
-        console.log(result)
         this.router.navigate(['admin']);
       }).catch((error: any) => {
         console.log(error)

@@ -20,5 +20,11 @@ export class AuthenticationService {
   isLoggedIn() {
     return this.afAuth.authState;
   }
+
+  signOut() {
+    return this.afAuth.signOut().then(() => {
+      this.router.navigate(['/']);
+    })
+  }
   
 }
