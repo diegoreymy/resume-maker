@@ -1,1 +1,229 @@
-<p>profile works!</p>
+<article class="resume-wrapper text-center position-relative" *ngIf="resume">
+    <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+        <header class="resume-header pt-4 pt-md-0">
+            <div class="media flex-column flex-md-row">
+                <img class="mr-3 img-fluid picture mx-auto" src="assets/images/profile.jpg" alt="">
+                <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+                    <div class="primary-info">
+                        <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">{{resume?.basics?.name}}</h1>
+                        <div class="title mb-3">{{resume?.basics?.label}}</div>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#"><fa-icon class="mr-2" [icon]="icons.envelope"></fa-icon>{{resume?.basics?.email}}</a></li>
+                            <li><a href="#"><fa-icon class="mr-2" [icon]="icons.mobile"></fa-icon>{{resume?.basics?.phone}}</a></li>
+                        </ul>
+                    </div><!--//primary-info-->
+                    <div class="secondary-info ml-md-auto mt-2">
+                        <ul class="resume-social list-unstyled">
+                            <li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><fa-icon [icon]="icons.linkedin"></fa-icon></span>linkedin.com/in/diegoreymy</a></li>
+                            <li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><fa-icon [icon]="icons.github"></fa-icon></span>github.com/diegoreymy</a></li>
+                        </ul>
+                    </div><!--//secondary-info-->
+                    
+                </div><!--//media-body-->
+            </div><!--//media-->
+        </header>
+        <div class="resume-body p-5">
+            <section class="resume-section summary-section mb-5">
+                <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Resumo</h2>
+                <div class="resume-section-content">
+                    <p class="mb-0">Sou desenvolvedor de software e profissional de TI, adaptável, focado no aprendizado contínuo, com mais de 4 anos de experiência na estruturação, desenvolvimento e manutenção de aplicativos web, com muita disposição e atenção aos detalhes. Sou formado em ciência da computação. Falo espanhol e português fluentemente. Posso me comunicar em inglês e faço aulas particulares três vezes por semana desde outubro de 2019. Atualmente, estou trabalhando em período integral como desenvolvedor front-end na Zup Innovation.</p>
+                </div>
+            </section><!--//summary-section-->
+            <div class="row">
+                <div class="col-lg-9">
+                    <section class="resume-section experience-section mb-5">
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Últimas Experiências de Trabalho</h2>
+                        <div class="resume-section-content">
+                            <div class="resume-timeline position-relative">
+                                <article class="resume-timeline-item position-relative pb-5">
+                                    
+                                    <div class="resume-timeline-item-header mb-2">
+                                        <div class="d-flex flex-column flex-md-row">
+                                            <h3 class="resume-position-title font-weight-bold mb-1">Frontend Developer</h3>
+                                            <div class="resume-company-name ml-auto">Zup Innovation</div>
+                                        </div><!--//row-->
+                                        <div class="resume-position-time">01/2020 - atual</div>
+                                    </div><!--//resume-timeline-item-header-->
+                                    <div class="resume-timeline-item-desc">
+                                        <p>Atualmente, estou trabalhando em um projeto web de busca e comparação de investimentos para um grande banco brasileiro. Desenvolvido com Angular 8, tive a oportunidade de fazer parte da estruturação e planejamento do frontend do projeto, com foco em acessibilidade, usabilidade e performance. Desde o começo do projeto temos implementado boas práticas e alta cobertura de testes unitários.</p>
+                                        <h4 class="resume-timeline-item-desc-heading font-weight-bold">Tecnologias usadas:</h4>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Angular8</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">CSS</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AWS</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Jest</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Javascript</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Typescript</span></li>
+                                        </ul>
+                                    </div><!--//resume-timeline-item-desc-->
+
+                                </article><!--//resume-timeline-item-->
+                                
+                                <article class="resume-timeline-item position-relative pb-5">
+                                    
+                                    <div class="resume-timeline-item-header mb-2">
+                                        <div class="d-flex flex-column flex-md-row">
+                                            <h3 class="resume-position-title font-weight-bold mb-1">Frontend Developer</h3>
+                                            <div class="resume-company-name ml-auto">Zup Innovation</div>
+                                        </div><!--//row-->
+                                        <div class="resume-position-time">06/2018 - 12/2018</div>
+                                    </div><!--//resume-timeline-item-header-->
+                                    <div class="resume-timeline-item-desc">
+                                        <p>Por 6 meses trabalhei como analista e desenvolvedor para os canais digitais PJ em importante banco Brasileiro, implantando novas funcionalidades e produtos nos apps e no portal web, gerando entregas rápidas e de qualidade, tendo vivência com produtos bancários pagamento, cobrança, transferência entre contas e Onboarding.</p>
+                                        <h4 class="resume-timeline-item-desc-heading font-weight-bold">Tecnologias usadas:</h4>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AngularJS</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">CSS</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Node.js</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Javascript</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Typescript</span></li>
+                                        </ul>
+                                    </div><!--//resume-timeline-item-desc-->
+
+                                </article><!--//resume-timeline-item-->
+                                
+                                <article class="resume-timeline-item position-relative pb-5">
+                                    
+                                    <div class="resume-timeline-item-header mb-2">
+                                        <div class="d-flex flex-column flex-md-row">
+                                            <h3 class="resume-position-title font-weight-bold mb-1">Frontend Developer</h3>
+                                            <div class="resume-company-name ml-auto">Accenture</div>
+                                        </div><!--//row-->
+                                        <div class="resume-position-time">09/2016 - 06/2018</div>
+                                    </div><!--//resume-timeline-item-header-->
+                                    <div class="resume-timeline-item-desc">
+                                        <p>Participei do desenvolvimento de sistemas especificamente no time de cadastro, para uma grande seguradora brasileira, atuando como desenvolvedor frontend, dando manutenção para seus sistemas legados com AngularJS e crinado novos sistemas com Angular 8</p>
+                                        <p>Trabalhei em conjunto com o time de backend integrando apis constantemente, com alta qualidade, boas prácticas e criando testes unitários para todo o desenvolvimento realizado.</p>
+                                        <p>Na Accenture também tive a oportunidade de atuar em outros projetos para uma grande companhia aérea presente no Brasil e na Argentina, onde participei do desenvolvimento de seus portais web usando tecnologias como Liferay e Javascript Vanilla.</p>
+                                        <h4 class="resume-timeline-item-desc-heading font-weight-bold">Tecnologias usadas:</h4>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">AngularJS</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Angular8</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">CSS</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Karma</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Javascript</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Liferay</span></li>
+                                            <li class="list-inline-item"><span class="badge badge-primary badge-pill">Typescript</span></li>
+                                        </ul>
+                                    </div><!--//resume-timeline-item-desc-->
+
+                                </article><!--//resume-timeline-item-->
+
+                            </div><!--//resume-timeline-->
+                        </div>
+                    </section><!--//experience-section-->
+                </div>
+                <div class="col-lg-3">
+                    <section class="resume-section skills-section mb-5">
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Skills</h2>
+                        <div class="resume-section-content">
+                            <div class="resume-skill-item">
+                                <h4 class="resume-skills-cat font-weight-bold">Frontend</h4>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">JavaScript</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">Angular 8+</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">AngularJS</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">Typescript</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">HTML/CSS/SASS/LESS</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 96%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">Unit Testing</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">React</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!--//resume-skill-item-->
+                            
+                            <div class="resume-skill-item">
+                                <h4 class="resume-skills-cat font-weight-bold">Backend</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <div class="resume-skill-name">Node.js</div>
+                                        <div class="progress resume-progress">
+                                            <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 78%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!--//resume-skill-item-->
+                            
+                            <div class="resume-skill-item">
+                                <h4 class="resume-skills-cat font-weight-bold">Outros</h4>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><span class="badge badge-light">Jenkins</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">AWS</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Git</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Cypress</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Figma</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Sketch</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">InVision</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Scrum</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Jira</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Agile</span></li>
+                                    <li class="list-inline-item"><span class="badge badge-light">Kanban</span></li>
+                                </ul>
+                            </div><!--//resume-skill-item-->
+                        </div><!--resume-section-content-->
+                    </section><!--//skills-section-->
+                    <section class="resume-section education-section mb-5">
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Educação</h2>
+                        <div class="resume-section-content">
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <div class="resume-degree font-weight-bold">Ciência da Computação</div>
+                                    <div class="resume-degree-org">Instituto Universitario de la Frontera</div>
+                                    <div class="resume-degree-time">2007 - 2011</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section><!--//education-section-->
+                    <section class="resume-section language-section mb-5">
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Línguas</h2>
+                        <div class="resume-section-content">
+                            <ul class="list-unstyled resume-lang-list">
+                                <li class="mb-2"><span class="resume-lang-name font-weight-bold mr-1">Espanhol</span> <small class="text-muted font-weight-normal">(Nativo)</small></li>
+                                <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold mr-1">Português</span> <small class="text-muted font-weight-normal">(Fluente)</small></li>
+                                <li><span class="resume-lang-name font-weight-bold mr-1">Inglês</span> <small class="text-muted font-weight-normal">(Professional)</small></li>
+                            </ul>
+                        </div>
+                    </section><!--//language-section-->					    
+                </div>
+            </div><!--//row-->
+        </div><!--//resume-body-->
+        
+        
+    </div>
+</article>  

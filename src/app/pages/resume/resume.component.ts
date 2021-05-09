@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IResume } from 'src/app/shared/models/resume.model';
 import { ResumeService } from 'src/app/shared/services/resume.service';
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faMobile } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-resume',
@@ -11,6 +14,14 @@ import { ResumeService } from 'src/app/shared/services/resume.service';
 export class ResumeComponent implements OnInit {
 
   nickname: string = "";
+  resume: IResume | undefined;
+  icons = {
+    github: faGithub,
+    linkedin: faLinkedinIn,
+    envelope: faEnvelope,
+    mobile: faMobile,
+  };
+
 
   constructor(
     private resumeService: ResumeService,
@@ -24,8 +35,8 @@ export class ResumeComponent implements OnInit {
   }
 
   getResumeByNickname(nickname: string) {
-    this.resumeService.getResumeByNickname(nickname).subscribe((resumes: IResume) => {
-      console.log(resumes)
+    this.resumeService.getResumeByNickname(nickname).subscribe((resume: IResume[]) => {
+      this.resume = resume[0];
     })
   }
 

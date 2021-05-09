@@ -14,7 +14,7 @@ export class ResumeService {
     return this.http.get<IResume[]>('http://localhost:3000/resume')
   }
 
-  getResumeByNickname(nickname: string): Observable<IResume> {
-    return this.http.get<IResume>(`http://localhost:3000/resume?nickname=${nickname}`)
+  getResumeByNickname(nickname: string): Observable<IResume[]> {
+    return this.http.get<IResume[]>(`http://localhost:3000/resume?nickname=${nickname}`)
   }
 }
