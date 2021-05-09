@@ -8,12 +8,6 @@ export interface IResume {
     languages: ILanguage[];
 }
 
-export interface IProfile {
-    network: string;
-    username: string;
-    url: string;
-}
-
 export interface IBasics {
     name: string;
     label: string;
@@ -21,7 +15,8 @@ export interface IBasics {
     email: string;
     phone: string;
     summary: string;
-    profiles: IProfile[];
+    githubUrl: string;
+    linkedinUrl: string;
 }
 
 export interface IWork {

@@ -1,6 +1,6 @@
 <main>
   <div class="d-lg-none">
-    <div class="d-flex flex-column bg-light" style="width: 4.5rem; height: 100%;">
+    <div class="d-flex flex-column bg-light" style="width: 4.5rem; height: 100%; border: 1px solid rgba(0, 0, 0, 0.125);">
       <a href="/" class="d-block p-1 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip"
         data-bs-placement="right">
         <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-12">
@@ -43,7 +43,7 @@
   </div>
 
   <div class="d-none d-lg-block ">
-    <div class="d-flex flex-column p-3 bg-light" style="width: 280px; height: 100%;">
+    <div class="d-flex flex-column p-3 bg-light" style="width: 280px; height: 100%; border: 1px solid rgba(0, 0, 0, 0.125);">
       <a href="javascript:void(0)"
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
         <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-3">
@@ -85,4 +85,11 @@
       </div>
     </div>
   </div>
+  <section class="content-section container-fluid">
+    <div class="mt-4 mb-4">
+      <h4>Formulario de Registro</h4>
+      <p>En este fomulario deberás colocar todas las informaciones que aparecerán en tu currículo, por favor llenas los campos abajo.</p>
+    </div>
+    <div app-basic-info-form></div>
+  </section>
 </main>
