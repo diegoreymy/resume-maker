@@ -1,39 +1,43 @@
-
-<div class="row justify-content-center">
-  <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-lg-2 col-md-3 col-sm-4 col-6">
-</div>
-<section class="row justify-content-center">
-  <div class="col col col-12 col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-3">Acceso</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Por favor, coloque abajo sus credenciales para poder ingresar.</h6>
-        <form [formGroup]="form">
-          <div class="mb-3">
-            <label for="inputEmail" class="form-label">Dirección de correo electrónico</label>
-            <input type="email" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-4">
-            <label for="inputPassword" class="form-label">Contraseña</label>
-            <input type="password" formControlName="password" class="form-control" id="inputPassword">
-          </div>
-          <div class="row mb-3">
-            <div class="d-grid gap-2 col-12 col-md-6 mb-3 mb-md-0 mx-auto">
-              <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loginLoading"></span>
-                {{loginLoading ? 'Cargando...' : 'Entrar'}}
-              </button>
+<main class="container-fluid">
+  <div class="row justify-content-center">
+    <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-lg-2 col-md-3 col-sm-4 col-6">
+  </div>
+  <section class="row justify-content-center">
+    <div class="col col col-12 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title mb-3">Acceso</h5>
+          <h6 class="card-subtitle mb-4 text-muted">Por favor, coloque abajo sus credenciales para poder ingresar.</h6>
+          <form [formGroup]="form">
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Dirección de correo electrónico</label>
+              <input type="email" formControlName="email" class="form-control" id="inputEmail"
+                aria-describedby="emailHelp">
             </div>
-            <div class="d-grid gap-2 col-12 col-md-6 mx-auto">
-              <button type="submit" [disabled]="form.invalid" (click)="register($event)" class="btn btn-secondary">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="registerLoading"></span>
-                {{registerLoading ? 'Cargando...' : 'Registrase'}}
-              </button>
-          </div>
+            <div class="mb-4">
+              <label for="inputPassword" class="form-label">Contraseña</label>
+              <input type="password" formControlName="password" class="form-control" id="inputPassword">
+            </div>
+            <div class="row mb-3">
+              <div class="d-grid gap-2 col-12 col-md-6 mb-3 mb-md-0 mx-auto">
+                <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                    *ngIf="loginLoading"></span>
+                  {{loginLoading ? 'Cargando...' : 'Entrar'}}
+                </button>
+              </div>
+              <div class="d-grid gap-2 col-12 col-md-6 mx-auto">
+                <button type="submit" [disabled]="form.invalid" (click)="register($event)" class="btn btn-secondary">
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                    *ngIf="registerLoading"></span>
+                  {{registerLoading ? 'Cargando...' : 'Registrase'}}
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
         </div>
-        </form>
-        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>

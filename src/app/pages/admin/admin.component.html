@@ -1,2 +1,88 @@
-<p>admin works!</p>
-<button (click)="signOut()">logout</button>
+<main>
+  <div class="d-lg-none">
+    <div class="d-flex flex-column bg-light" style="width: 4.5rem; height: 100%;">
+      <a href="/" class="d-block p-1 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip"
+        data-bs-placement="right">
+        <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-12">
+        <span class="visually-hidden">Icon-only</span>
+      </a>
+      <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link active py-3 border-bottom" aria-current="page" title="Home"
+            data-bs-toggle="tooltip" data-bs-placement="right">
+            <fa-icon class="me-2" [icon]="icons.addressCard"></fa-icon>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Dashboard" data-bs-toggle="tooltip"
+            data-bs-placement="right">
+            <fa-icon class="me-2" [icon]="icons.briefcase"></fa-icon>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Orders" data-bs-toggle="tooltip"
+            data-bs-placement="right">
+            <fa-icon class="me-2" [icon]="icons.userGraduate"></fa-icon>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Products" data-bs-toggle="tooltip"
+            data-bs-placement="right">
+            <fa-icon class="me-2" [icon]="icons.dumbbell"></fa-icon>
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="d-flex flex-column bg-light text-center">
+        <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Customers" data-bs-toggle="tooltip"
+          data-bs-placement="right">
+          <fa-icon class="me-2" [icon]="icons.userCircle"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-none d-lg-block ">
+    <div class="d-flex flex-column p-3 bg-light" style="width: 280px; height: 100%;">
+      <a href="javascript:void(0)"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-3">
+        <span class="fs-4">Resume Maker</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link active" aria-current="page">
+            <fa-icon class="me-2" [icon]="icons.addressCard"></fa-icon>
+            Información personal
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="nav-link link-dark">
+            <fa-icon class="me-2" [icon]="icons.briefcase"></fa-icon>
+            Experiencias laborales
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="nav-link link-dark">
+            <fa-icon class="me-2" [icon]="icons.userGraduate"></fa-icon>
+            Estudios o certificaciones
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="nav-link link-dark">
+            <fa-icon class="me-2" [icon]="icons.dumbbell"></fa-icon>
+            Habilidades
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="d-flex flex-column bg-light justify-content-center">
+        <a href="javascript:void(0)" class="nav-link link-dark" (click)="signOut()">
+          <fa-icon class="me-2" [icon]="icons.userCircle"></fa-icon>
+          Cerrar sesión
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
