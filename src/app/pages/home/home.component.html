@@ -19,10 +19,16 @@
           </div>
           <div class="row mb-3">
             <div class="d-grid gap-2 col-12 col-md-6 mb-3 mb-md-0 mx-auto">
-              <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">Entrar</button>
+              <button type="submit" [disabled]="form.invalid" (click)="login($event)" class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loginLoading"></span>
+                {{loginLoading ? 'Cargando...' : 'Entrar'}}
+              </button>
             </div>
             <div class="d-grid gap-2 col-12 col-md-6 mx-auto">
-            <button type="submit" [disabled]="form.invalid" (click)="register($event)" class="btn btn-secondary">Registrase</button>
+              <button type="submit" [disabled]="form.invalid" (click)="register($event)" class="btn btn-secondary">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="registerLoading"></span>
+                {{registerLoading ? 'Cargando...' : 'Registrase'}}
+              </button>
           </div>
         </div>
         </form>

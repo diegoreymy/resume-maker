@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
   }
 
   errorMessage: string = '';
+  loginLoading: boolean = false;
+  registerLoading: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,26 +38,32 @@ export class HomeComponent implements OnInit {
   }
 
   login(event: Event) {
+    this.loginLoading = true;
     this.errorMessage = "";
     event.preventDefault();
     if (this.form.valid) {
       this.setUser(this.form);
       this.authenticationService.signIn(this.user).then(() => {
+        this.loginLoading = false;
         this.router.navigate(['admin']);
       }).catch((error: any) => {
+        this.loginLoading = false;
         this.printErrorByCode(error.code);
       })
     }
   }
 
   register(event: Event) {
+    this.registerLoading = true;
     this.errorMessage = "";
     event.preventDefault();
     if (this.form.valid) {
       this.setUser(this.form);
       this.authenticationService.signUp(this.user).then(() => {
+        this.registerLoading = false;
         this.router.navigate(['admin']);
       }).catch((error: any) => {
+        this.registerLoading = false;
         this.printErrorByCode(error.code);
       })
     }
