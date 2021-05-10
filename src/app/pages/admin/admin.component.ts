@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
   suscriptions = new Subscription();
   resume: Resume =  new Resume();
   loading: boolean = false;
+  showToast: boolean = false;
 
   icons = {
     addressCard: faAddressCard,
@@ -52,6 +53,10 @@ export class AdminComponent implements OnInit {
     this.loading = true;
     this.resumeService.updateResume(resume).subscribe(() => {
       this.loading = false;
+      this.showToast = true;
+      setTimeout(() => {
+        this.showToast = false;
+      }, 2000);
     });
   }
 
