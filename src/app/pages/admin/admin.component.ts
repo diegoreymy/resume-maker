@@ -14,9 +14,29 @@ export class AdminComponent implements OnInit {
 
   currentEmailUser$ = new Observable;
   suscriptions = new Subscription();
-  resume: Resume =  new Resume();
+  resume: Resume = new Resume();
   loading: boolean = false;
   showToast: boolean = false;
+  selectedForm = 'Información personal';
+
+  labelForms = [
+    {
+      label: 'Información personal',
+      icon: faAddressCard
+    },
+    {
+      label: 'Experiencias laborales',
+      icon: faBriefcase
+    },
+    {
+      label: 'Estudios o certificaciones',
+      icon: faUserGraduate
+    },
+    {
+      label: 'Habilidades',
+      icon: faDumbbell
+    }
+  ]
 
   icons = {
     addressCard: faAddressCard,

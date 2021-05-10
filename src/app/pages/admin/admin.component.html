@@ -51,28 +51,10 @@
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="javascript:void(0)" class="nav-link active" aria-current="page">
-            <fa-icon class="me-2" [icon]="icons.addressCard"></fa-icon>
-            Información personal
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-link link-dark">
-            <fa-icon class="me-2" [icon]="icons.briefcase"></fa-icon>
-            Experiencias laborales
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-link link-dark">
-            <fa-icon class="me-2" [icon]="icons.userGraduate"></fa-icon>
-            Estudios o certificaciones
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-link link-dark">
-            <fa-icon class="me-2" [icon]="icons.dumbbell"></fa-icon>
-            Habilidades
+        <li class="nav-item" *ngFor="let item of labelForms">
+          <a href="javascript:void(0)" class="nav-link" (click)="selectedForm = item.label" [ngClass]="{'active': selectedForm === item.label}" aria-current="page">
+            <fa-icon class="me-2" [icon]="item.icon"></fa-icon>
+            {{item.label}}
           </a>
         </li>
       </ul>
@@ -90,7 +72,7 @@
       <h4>Formulario de Registro</h4>
       <p>En este fomulario deberás colocar todas las informaciones que aparecerán en tu currículo, por favor llenas los campos abajo.</p>
     </div>
-    <div app-basic-info-form [resume]="resume" [loading]="loading" (onSaveResume)="onSaveResume($event)"></div>
+    <div app-basic-info-form [resume]="resume" *ngIf="selectedForm === 'Información personal'" [loading]="loading" (onSaveResume)="onSaveResume($event)"></div>
   </section>
 </main>
 <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" [ngClass]="{'show': showToast}">
