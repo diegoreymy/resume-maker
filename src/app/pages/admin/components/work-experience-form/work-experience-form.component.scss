@@ -7,6 +7,9 @@
         border-left-width: 1px;
         display: flex;
         justify-content: space-between;
-        width: 23%;
+        width: 100%;
+        @media only screen and (min-width: 768px) {
+            width: 23%;
+        }
     }
 }

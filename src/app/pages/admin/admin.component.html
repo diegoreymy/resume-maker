@@ -8,28 +8,10 @@
         <span class="visually-hidden">Icon-only</span>
       </a>
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-        <li class="nav-item">
-          <a href="javascript:void(0)" class="nav-link active py-3 border-bottom" aria-current="page" title="Home"
+        <li class="nav-item" *ngFor="let item of labelForms">
+          <a [ngClass]="{'active': selectedForm === item.label}" (click)="selectedForm = item.label" href="javascript:void(0)" class="nav-link active py-3 border-bottom" aria-current="page" title="Home"
             data-bs-toggle="tooltip" data-bs-placement="right">
-            <fa-icon class="me-2" [icon]="icons.addressCard"></fa-icon>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Dashboard" data-bs-toggle="tooltip"
-            data-bs-placement="right">
-            <fa-icon class="me-2" [icon]="icons.briefcase"></fa-icon>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Orders" data-bs-toggle="tooltip"
-            data-bs-placement="right">
-            <fa-icon class="me-2" [icon]="icons.userGraduate"></fa-icon>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)" class="nav-link py-3 border-bottom" title="Products" data-bs-toggle="tooltip"
-            data-bs-placement="right">
-            <fa-icon class="me-2" [icon]="icons.dumbbell"></fa-icon>
+            <fa-icon class="me-2" [icon]="item.icon"></fa-icon>
           </a>
         </li>
       </ul>

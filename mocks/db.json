@@ -71,52 +71,6 @@
           "fluency": "Intermedio"
         }
       ]
-    },
-    {
-      "id": 2,
-      "email": "diegoreymy8@gmail.com",
-      "username": "123",
-      "basics": {
-        "name": "",
-        "label": "",
-        "picture": "",
-        "phone": "",
-        "summary": "",
-        "githubUrl": "",
-        "linkedinUrl": ""
-      },
-      "work": [
-        {
-          "company": "",
-          "position": "",
-          "startDate": "",
-          "endDate": "",
-          "summary": "",
-          "highlights": []
-        }
-      ],
-      "education": [
-        {
-          "institution": "",
-          "area": "",
-          "studyType": "",
-          "startDate": "",
-          "endDate": ""
-        }
-      ],
-      "skills": [
-        {
-          "category": "",
-          "name": "",
-          "level": 0
-        }
-      ],
-      "languages": [
-        {
-          "language": "",
-          "fluency": ""
-        }
-      ]
     }
   ]
 }
