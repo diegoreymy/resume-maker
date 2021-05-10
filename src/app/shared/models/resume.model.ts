@@ -1,50 +1,50 @@
-export interface IResume {
-    id: number;
-    nickname: string;
-    basics: IBasics;
-    work: IWork[];
-    education: IEducation[];
-    skills: ISkill[];
-    languages: ILanguage[];
+export class Resume {
+    id: number = 0;
+    email: string = "";
+    username: string = "";
+    basics: Basics = new Basics();
+    work: Work[] = [new Work()];
+    education: Education[] = [new Education()];
+    skills: Skill[] = [new Skill()];
+    languages: Language[] = [new Language()];
 }
 
-export interface IBasics {
-    name: string;
-    label: string;
-    picture: string;
-    email: string;
-    phone: string;
-    summary: string;
-    githubUrl: string;
-    linkedinUrl: string;
+export class Basics {
+    name: string = "";
+    label: string = "";
+    picture: string = "";
+    phone: string = "";
+    summary: string = "";
+    githubUrl: string = "";
+    linkedinUrl: string = "";
 }
 
-export interface IWork {
-    company: string;
-    position: string;
-    startDate: string;
-    endDate: string;
-    summary: string;
-    highlights: string[];
+export class Work {
+    company: string = "";
+    position: string = "";
+    startDate: string = "";
+    endDate: string = "";
+    summary: string = "";
+    highlights: string[] = [];
 }
 
-export interface IEducation {
-    institution: string;
-    area: string;
-    studyType: string;
-    startDate: string;
-    endDate: string;
+export class Education {
+    institution: string = "";
+    area: string = "";
+    studyType: string = "";
+    startDate: string = "";
+    endDate: string = "";
 }
 
-export interface ISkill {
-    category: string;
-    name: string;
-    level: number;
+export class Skill {
+    category: string = "";
+    name: string = "";
+    level: number = 0;
 }
 
-export interface ILanguage {
-    language: string;
-    fluency: string;
+export class Language {
+    language: string = "";
+    fluency: string = "";
 }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IResume } from 'src/app/shared/models/resume.model';
+import { Resume } from 'src/app/shared/models/resume.model';
 import { ResumeService } from 'src/app/shared/services/resume.service';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
@@ -13,8 +13,8 @@ import { faMobile } from '@fortawesome/free-solid-svg-icons';
 })
 export class ResumeComponent implements OnInit {
 
-  nickname: string = "";
-  resume: IResume | undefined;
+  username: string = "";
+  resume: Resume = new Resume();
   icons = {
     github: faGithub,
     linkedin: faLinkedinIn,
@@ -27,15 +27,15 @@ export class ResumeComponent implements OnInit {
     private resumeService: ResumeService,
     private route: ActivatedRoute
   ) {
-    this.nickname = this.route.snapshot.paramMap.get('nickname') || '';
-    this.getResumeByNickname(this.nickname);
+    this.username = this.route.snapshot.paramMap.get('username') || '';
+    this.getResumeByusername(this.username);
    }
 
   ngOnInit(): void {
   }
 
-  getResumeByNickname(nickname: string) {
-    this.resumeService.getResumeByNickname(nickname).subscribe((resume: IResume[]) => {
+  getResumeByusername(username: string) {
+    this.resumeService.getResumeByusername(username).subscribe((resume: Resume[]) => {
       this.resume = resume[0];
     })
   }

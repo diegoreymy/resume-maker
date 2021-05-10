@@ -5,7 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { ResumeComponent } from './resume.component';
 
 const routes: Routes = [{
-  path: ':nickname',
+  path: ':username',
   component: ResumeComponent
 }];
 

@@ -2,20 +2,20 @@
     <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
         <header class="resume-header pt-4 pt-md-0">
             <div class="media flex-column flex-md-row">
-                <img class="mr-3 img-fluid picture mx-auto" src="assets/images/profile.jpg" alt="">
+                <img class="mr-3 img-fluid picture mx-auto" [src]="'assets/images/{{profile}}'" alt="Foto de perfil">
                 <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
                     <div class="primary-info">
                         <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">{{resume?.basics?.name}}</h1>
                         <div class="title mb-3">{{resume?.basics?.label}}</div>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#"><fa-icon class="mr-2" [icon]="icons.envelope"></fa-icon>{{resume?.basics?.email}}</a></li>
+                            <li class="mb-2"><a href="#"><fa-icon class="mr-2" [icon]="icons.envelope"></fa-icon>{{resume?.email}}</a></li>
                             <li><a href="#"><fa-icon class="mr-2" [icon]="icons.mobile"></fa-icon>{{resume?.basics?.phone}}</a></li>
                         </ul>
                     </div><!--//primary-info-->
                     <div class="secondary-info ml-md-auto mt-2">
                         <ul class="resume-social list-unstyled">
-                            <li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><fa-icon [icon]="icons.linkedin"></fa-icon></span>linkedin.com/in/diegoreymy</a></li>
-                            <li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><fa-icon [icon]="icons.github"></fa-icon></span>github.com/diegoreymy</a></li>
+                            <li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><fa-icon [icon]="icons.linkedin"></fa-icon></span>{{resume?.basics?.linkedinUrl}}</a></li>
+                            <li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><fa-icon [icon]="icons.github"></fa-icon></span>{{resume?.basics?.githubUrl}}</a></li>
                         </ul>
                     </div><!--//secondary-info-->
                     
@@ -26,7 +26,7 @@
             <section class="resume-section summary-section mb-5">
                 <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Resumo</h2>
                 <div class="resume-section-content">
-                    <p class="mb-0">Sou desenvolvedor de software e profissional de TI, adaptável, focado no aprendizado contínuo, com mais de 4 anos de experiência na estruturação, desenvolvimento e manutenção de aplicativos web, com muita disposição e atenção aos detalhes. Sou formado em ciência da computação. Falo espanhol e português fluentemente. Posso me comunicar em inglês e faço aulas particulares três vezes por semana desde outubro de 2019. Atualmente, estou trabalhando em período integral como desenvolvedor front-end na Zup Innovation.</p>
+                    <p class="mb-0">{{resume?.basics?.summary}}</p>
                 </div>
             </section><!--//summary-section-->
             <div class="row">

@@ -90,6 +90,6 @@
       <h4>Formulario de Registro</h4>
       <p>En este fomulario deberás colocar todas las informaciones que aparecerán en tu currículo, por favor llenas los campos abajo.</p>
     </div>
-    <div app-basic-info-form></div>
+    <div app-basic-info-form [resume]="resume" [loading]="loading" (onSaveResume)="onSaveResume($event)"></div>
   </section>
 </main>

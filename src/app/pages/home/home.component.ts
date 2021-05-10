@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LOGIN_ERROR_MESSAGES } from 'src/app/shared/constants/loginErrorMessages.constant';
+import { Resume } from 'src/app/shared/models/resume.model';
 import { IUserLogin } from 'src/app/shared/models/user.model';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
+import { ResumeService } from 'src/app/shared/services/resume.service';
 
 @Component({
   selector: 'app-home',
@@ -25,11 +27,13 @@ export class HomeComponent implements OnInit {
   errorMessage: string = '';
   loginLoading: boolean = false;
   registerLoading: boolean = false;
+  resume: Resume = new Resume();;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private resumeService: ResumeService
   ) {
     this.buildForm();
   }
@@ -59,9 +63,12 @@ export class HomeComponent implements OnInit {
     event.preventDefault();
     if (this.form.valid) {
       this.setUser(this.form);
-      this.authenticationService.signUp(this.user).then(() => {
-        this.registerLoading = false;
-        this.router.navigate(['admin']);
+      this.authenticationService.signUp(this.user).then((data) => {
+        this.resume.email = data?.user?.email || '';
+        this.resumeService.createResume(this.resume).subscribe(() => {
+          this.registerLoading = false;
+          this.router.navigate(['admin']);
+        });
       }).catch((error: any) => {
         this.registerLoading = false;
         this.printErrorByCode(error.code);
