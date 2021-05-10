@@ -48,8 +48,7 @@ export class WorkExperienceFormComponent implements OnInit, OnChanges {
       position: new FormControl(''),
       startDate: new FormControl(''),
       endDate: new FormControl(''),
-      summary: new FormControl(''),
-      // highlights: new FormControl(['']),
+      summary: new FormControl('')
     });
   }
 
@@ -69,6 +68,14 @@ export class WorkExperienceFormComponent implements OnInit, OnChanges {
     this.work.startDate = this.form.controls['startDate'].value;
     this.work.endDate = this.form.controls['endDate'].value;
     this.work.summary = this.form.controls['summary'].value;
+  }
+
+  addhighlight(highlight: string) {
+    this.work.highlights.push(highlight)
+  }
+
+  removeHighlights(index: number) {
+    this.work.highlights.splice(index, 1)
   }
 
   onClickDeleteWork() {

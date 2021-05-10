@@ -22,7 +22,7 @@
             <div class="col-md-6">
               <label for="startDate" class="form-label">Fecha de inicio en ese cargo</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="work?.startDate" formControlName="startDate" id="startDate">
+                <input type="text" class="form-control" placeholder="mm/aaaa" [value]="work?.startDate" formControlName="startDate" id="startDate">
                 <div class="invalid-feedback">
                   Por favor, coloque una fecha válida.
                 </div>
@@ -31,9 +31,25 @@
             <div class="col-md-6">
               <label for="endDate" class="form-label">Fecha de finalización en ese cargo</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="work?.endDate" formControlName="endDate" id="endDate">
+                <input type="text" placeholder="actual" class="form-control" [value]="work?.endDate" formControlName="endDate" id="endDate">
                 <div class="invalid-feedback">
                 Por favor, coloque una fecha válida.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="input-group">
+                <label class="input-group-text" for="inputGroupFile02">Tecnologías usadas</label>
+                <input #highlight type="text" class="form-control" id="inputGroupFile04" value="">
+                <button class="btn btn-outline-secondary" (click)="addhighlight(highlight.value)" type="button" id="inputGroupFileAddon04">agregar</button>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <ul class="list-group list-group-horizontal highlights-list gap-3">
+                    <li *ngFor="let highlight of work.highlights; let i = index" class="list-group-item highlights-list-item">{{highlight}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="removeHighlights(i)"></button></li>
+                  </ul>
                 </div>
               </div>
             </div>

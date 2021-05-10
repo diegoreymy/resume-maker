@@ -14,7 +14,7 @@ import { faMobile } from '@fortawesome/free-solid-svg-icons';
 export class ResumeComponent implements OnInit {
 
   username: string = "";
-  resume: Resume | undefined;
+  resume: Resume = new Resume();
   icons = {
     github: faGithub,
     linkedin: faLinkedinIn,

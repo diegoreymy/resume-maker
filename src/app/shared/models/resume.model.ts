@@ -22,8 +22,8 @@ export class Basics {
 export class Work {
     company: string = "";
     position: string = "";
-    startDate: Date = new Date();
-    endDate: Date = new Date();
+    startDate: string = "";
+    endDate: string = "";
     summary: string = "";
     highlights: string[] = [];
 }

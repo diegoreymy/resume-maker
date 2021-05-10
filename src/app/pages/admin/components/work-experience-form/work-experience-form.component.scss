@@ -1,0 +1,12 @@
+.highlights-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .highlights-list-item {
+        border-bottom-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        border-left-width: 1px;
+        display: flex;
+        justify-content: space-between;
+        width: 23%;
+    }
+}
