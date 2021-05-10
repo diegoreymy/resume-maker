@@ -1,13 +1,13 @@
-.languages-list {
+.skills-list {
   flex-direction: row;
   flex-wrap: wrap;
 
-  .languages-list-item {
+  .skills-list-item {
     border-bottom-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     border-left-width: 1px;
     display: flex;
     justify-content: space-between;
-    width: 23%;
+    width: 28%;
   }
 }

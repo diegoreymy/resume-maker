@@ -1,0 +1,50 @@
+<div class="row align-content-center" style="height: 100%;">
+  <div class="col col-12">
+    <div class="card">
+      <div class="card-body">
+        <form class="needs-validation" [formGroup]="form">
+          <div class="row g-3">
+            <div class="col-md-12">
+              <div class="input-group">
+                <label class="input-group-text" for="inputGroupFile02">Habilidades</label>
+                <select #category class="form-select" id="category">
+                  <option selected>Categoria</option>
+                  <option value="Frontend">Frontend</option>
+                  <option value="Backend">Backend</option>
+                  <option value="Otros">Otros</option>
+                </select>
+                <input #name type="text" class="form-control" id="name" value="">
+                <input #level type="text" class="form-control" placeholder="Nivel del 1 al 100...">
+                <span class="input-group-text" id="basic-addon2">%</span>
+                <button class="btn btn-outline-secondary"
+                  (click)="addSkill({category: category.value, name: name.value, level: level.value});" type="button"
+                  id="inputGroupFileAddon04">agregar</button>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <ul class="list-group list-group-horizontal skills-list gap-3">
+                    <li *ngFor="let skill of skills; let i = index" class="list-group-item skills-list-item">
+                        {{skill.category}} - {{skill.name}} - {{skill.level}}<button type="button" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Close" (click)="removeSkill(i)"></button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <div class="row mb-3">
+            <div class="d-grid gap-2 col-12 col-md-4 mb-3 mb-md-0 mx-auto">
+              <button type="submit" [disabled]="form.invalid && !form.dirty" (click)="save($event)"
+                class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+                {{loading ? 'Cargando...' : 'Guardar'}}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

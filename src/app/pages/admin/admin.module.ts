@@ -8,6 +8,7 @@ import { BasicInfoFormComponent } from './components/basic-info-form/basic-info-
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorkExperienceFormComponent } from './components/work-experience-form/work-experience-form.component';
 import { StudiesAndCertificationsFormComponent } from './components/studies-and-certifications-form/studies-and-certifications-form.component';
+import { SkillsFormComponent } from './components/skills-form/skills-form.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { StudiesAndCertificationsFormComponent } from './components/studies-and-
     BasicInfoFormComponent,
     WorkExperienceFormComponent,
     StudiesAndCertificationsFormComponent,
+    SkillsFormComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

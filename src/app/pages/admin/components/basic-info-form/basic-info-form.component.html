@@ -9,7 +9,8 @@
               <label for="username" class="form-label">Nombre de usuario</label>
               <div class="input-group has-validation">
                 <span class="input-group-text">http://localhost:4200/resume/</span>
-                <input type="text" class="form-control" formControlName="username" [value]="username ? username : ''" id="username" >
+                <input type="text" class="form-control" formControlName="username" [value]="username ? username : ''"
+                  id="username">
                 <div class="invalid-feedback">
                   El nombre de usuario es obligatorio.
                 </div>
@@ -17,14 +18,14 @@
             </div>
             <div class="col-sm-6">
               <label for="name" class="form-label">Nombre Completo</label>
-              <input type="text" class="form-control" [value]="basics?.name" formControlName="name" id="name"  >
+              <input type="text" class="form-control" [value]="basics?.name" formControlName="name" id="name">
               <div class="invalid-feedback">
                 Un nombre completo válido es obligatorio.
               </div>
             </div>
             <div class="col-sm-5">
               <label for="label" class="form-label">Rol principal</label>
-              <input type="text" class="form-control" [value]="basics?.label" formControlName="label" id="label"  >
+              <input type="text" class="form-control" [value]="basics?.label" formControlName="label" id="label">
               <div class="invalid-feedback">
                 Un rol principal válido es obligatorio.
               </div>
@@ -49,7 +50,8 @@
             <div class="col-md-4">
               <label for="profile-url-linkedin" class="form-label">Url de Linkedin</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="basics?.linkedinUrl" formControlName="linkedinUrl" id="profile-url-linkedin">
+                <input type="text" class="form-control" [value]="basics?.linkedinUrl" formControlName="linkedinUrl"
+                  id="profile-url-linkedin">
                 <div class="invalid-feedback">
                   Por favor, coloque una url válida.
                 </div>
@@ -58,32 +60,38 @@
             <div class="col-md-4">
               <label for="profile-url-github" class="form-label">Url de GitHub</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="basics?.githubUrl" formControlName="githubUrl" id="profile-url-github">
+                <input type="text" class="form-control" [value]="basics?.githubUrl" formControlName="githubUrl"
+                  id="profile-url-github">
                 <div class="invalid-feedback">
                   Por favor, coloque una url válida.
                 </div>
               </div>
             </div>
             <div class="col-md-12">
-              <div class="input-group mb-3">
-                  <label class="input-group-text" for="inputGroupFile02">Idiomas</label>
-                  <input #language type="text" class="form-control" id="inputGroupFile04" value="">
-                  <select #fluency class="form-select" id="inputGroupSelect01">
-                      <option selected>Fluencia...</option>
-                      <option value="Básico">Básico</option>
-                      <option value="Intermedio">Intermedio</option>
-                      <option value="Avanzado">Avanzado</option>
-                      <option value="Fluente">Fluente</option>
-                      <option value="Nativo">Nativo</option>
-                    </select>
-                  <button class="btn btn-outline-secondary" (click)="addLanguage({language: language.value, fluency: fluency.value})" type="button" id="inputGroupFileAddon04">agregar</button>
-                </div>
+              <div class="input-group">
+                <label class="input-group-text" for="inputGroupFile02">Idiomas</label>
+                <input #language type="text" class="form-control" id="inputGroupFile04" value="">
+                <select #fluency class="form-select" id="inputGroupSelect01">
+                  <option selected>Fluencia...</option>
+                  <option value="Básico">Básico</option>
+                  <option value="Intermedio">Intermedio</option>
+                  <option value="Avanzado">Avanzado</option>
+                  <option value="Fluente">Fluente</option>
+                  <option value="Nativo">Nativo</option>
+                </select>
+                <button class="btn btn-outline-secondary"
+                  (click)="addLanguage({language: language.value, fluency: fluency.value})" type="button"
+                  id="inputGroupFileAddon04">agregar</button>
+              </div>
             </div>
             <div class="col-md-12">
               <div class="card">
                 <div class="card-body">
                   <ul class="list-group list-group-horizontal languages-list gap-3">
-                    <li *ngFor="let languageItem of languages; let i = index" class="list-group-item languages-list-item">{{languageItem.language}} - {{languageItem.fluency}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="removeLanguage(i)"></button></li>
+                    <li *ngFor="let languageItem of languages; let i = index"
+                      class="list-group-item languages-list-item">{{languageItem.language}} -
+                      {{languageItem.fluency}}<button type="button" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Close" (click)="removeLanguage(i)"></button></li>
                   </ul>
                 </div>
               </div>
@@ -91,7 +99,8 @@
             <div class="col-md-12">
               <label for="summary" class="form-label">Resumen personal</label>
               <div class="input-group">
-                <textarea maxlength="500"  formControlName="summary" [value]="basics?.summary" class="form-control" id="summary" aria-label="Resumen personal"></textarea>
+                <textarea maxlength="500" formControlName="summary" [value]="basics?.summary" class="form-control"
+                  id="summary" aria-label="Resumen personal"></textarea>
               </div>
             </div>
             <div class="col-md-12">
@@ -105,9 +114,9 @@
           <hr class="my-4">
           <div class="row mb-3">
             <div class="d-grid gap-2 col-12 col-md-4 mb-3 mb-md-0 mx-auto">
-              <button type="submit" [disabled]="form.invalid && !form.dirty" (click)="save($event)" class="btn btn-primary">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
-                  *ngIf="loading"></span>
+              <button type="submit" [disabled]="form.invalid && !form.dirty" (click)="save($event)"
+                class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
                 {{loading ? 'Cargando...' : 'Guardar'}}
               </button>
             </div>

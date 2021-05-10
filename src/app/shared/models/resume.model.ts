@@ -39,7 +39,7 @@ export class Education {
 export class Skill {
     category: string = "";
     name: string = "";
-    level: number = 0;
+    level: string = "";
 }
 
 export class Language {

@@ -1,6 +1,7 @@
 <main>
   <div class="d-lg-none">
-    <div class="d-flex flex-column bg-light" style="width: 4.5rem; height: 100%; border: 1px solid rgba(0, 0, 0, 0.125);">
+    <div class="d-flex flex-column bg-light"
+      style="width: 4.5rem; height: 100%; border: 1px solid rgba(0, 0, 0, 0.125);">
       <a href="/" class="d-block p-1 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip"
         data-bs-placement="right">
         <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-12">
@@ -43,7 +44,8 @@
   </div>
 
   <div class="d-none d-lg-block ">
-    <div class="d-flex flex-column p-3 bg-light" style="width: 280px; height: 100%; border: 1px solid rgba(0, 0, 0, 0.125);">
+    <div class="d-flex flex-column p-3 bg-light"
+      style="width: 280px; height: 100%; border: 1px solid rgba(0, 0, 0, 0.125);">
       <a href="javascript:void(0)"
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
         <img src="../assets/images/logo.png" alt="Logo Resume Maker" class="col col-3">
@@ -52,7 +54,8 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item" *ngFor="let item of labelForms">
-          <a href="javascript:void(0)" class="nav-link" (click)="selectedForm = item.label" [ngClass]="{'active': selectedForm === item.label}" aria-current="page">
+          <a href="javascript:void(0)" class="nav-link" (click)="selectedForm = item.label"
+            [ngClass]="{'active': selectedForm === item.label}" aria-current="page">
             <fa-icon class="me-2" [icon]="item.icon"></fa-icon>
             {{item.label}}
           </a>
@@ -70,10 +73,12 @@
   <section class="content-section container-fluid" *ngIf="resume">
     <div class="mt-4 mb-4">
       <h4>Formulario de Registro</h4>
-      <p>En este fomulario deberás colocar todas las informaciones que aparecerán en tu currículo, por favor llenas los campos abajo.</p>
+      <p>En este fomulario deberás colocar todas las informaciones que aparecerán en tu currículo, por favor llenas los
+        campos abajo.</p>
     </div>
     <ng-container *ngIf="selectedForm === 'Información personal'">
-      <div app-basic-info-form [basics]="resume.basics" [username]="resume.username" [email]="resume.email" [loading]="loading" [languages]="resume.languages" (onSaveBasics)="onSaveBasics($event)"></div>
+      <div app-basic-info-form [basics]="resume.basics" [username]="resume.username" [email]="resume.email"
+        [loading]="loading" [languages]="resume.languages" (onSaveBasics)="onSaveBasics($event)"></div>
     </ng-container>
     <ng-container *ngIf="selectedForm === 'Experiencias laborales'">
       <div class="row mb-3">
@@ -86,13 +91,16 @@
         <div class="accordion mb-2" id="accordionWorks">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" [attr.aria-expanded]="false" [attr.aria-controls]="'#collapse'+i">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#collapse'+i" [attr.aria-expanded]="false" [attr.aria-controls]="'#collapse'+i">
                 {{work.company ? work.company : 'Experiencia Laboral #' + ( i + 1 )}}
               </button>
             </h2>
-            <div [attr.id]="'collapse'+i" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionWorks">
+            <div [attr.id]="'collapse'+i" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionWorks">
               <div class="accordion-body">
-                <div app-work-experience-form [work]="work" [loading]="loading" (onSaveWork)="onSaveWork($event, i)" (onDeleteWork)="onDeleteWork(i)"></div>
+                <div app-work-experience-form [work]="work" [loading]="loading" (onSaveWork)="onSaveWork($event, i)"
+                  (onDeleteWork)="onDeleteWork(i)"></div>
               </div>
             </div>
           </div>
@@ -102,7 +110,8 @@
     <ng-container *ngIf="selectedForm === 'Estudios o certificaciones'">
       <div class="row mb-3">
         <div class="d-grid gap-2 col-12 col-md-4 mb-3 mb-md-0 mx-auto">
-          <button type="button" (click)="addEducation()" class="btn btn-secondary">Agregar estudio o certificación</button>
+          <button type="button" (click)="addEducation()" class="btn btn-secondary">Agregar estudio o
+            certificación</button>
         </div>
       </div>
       <hr class="my-4">
@@ -110,26 +119,33 @@
         <div class="accordion mb-2" id="accordionEducation">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" [attr.aria-expanded]="false" [attr.aria-controls]="'#collapse'+i">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#collapse'+i" [attr.aria-expanded]="false" [attr.aria-controls]="'#collapse'+i">
                 {{education.institution ? education.institution : 'Estudio o certificación #' + ( i + 1 )}}
               </button>
             </h2>
-            <div [attr.id]="'collapse'+i" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionEducation">
+            <div [attr.id]="'collapse'+i" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionEducation">
               <div class="accordion-body">
-                <div app-studies-and-certifications-form [education]="education" [loading]="loading" (onSaveEducation)="onSaveEducation($event, i)" (onDeleteEducation)="onDeleteEducation(i)"></div>
+                <div app-studies-and-certifications-form [education]="education" [loading]="loading"
+                  (onSaveEducation)="onSaveEducation($event, i)" (onDeleteEducation)="onDeleteEducation(i)"></div>
               </div>
             </div>
           </div>
         </div>
       </ng-container>
     </ng-container>
+    <ng-container *ngIf="selectedForm === 'Habilidades'">
+      <div app-skills-form [skills]="resume.skills" [loading]="loading" (onSaveSkills)="onSaveSkills($event)"></div>
+    </ng-container>
   </section>
 </main>
-<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" [ngClass]="{'show': showToast}">
+<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true"
+  [ngClass]="{'show': showToast}">
   <div class="d-flex">
     <div class="toast-body">
       Listo! Las informaciones fueron guardadas.
-   </div>
+    </div>
     <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
   </div>
 </div>
