@@ -3,10 +3,10 @@ export class Resume {
     email: string = "";
     username: string = "";
     basics: Basics = new Basics();
-    work: Work[] = [new Work()];
-    education: Education[] = [new Education()];
-    skills: Skill[] = [new Skill()];
-    languages: Language[] = [new Language()];
+    work: Work[] = [];
+    education: Education[] = [];
+    skills: Skill[] = [];
+    languages: Language[] = [];
 }
 
 export class Basics {
@@ -22,8 +22,8 @@ export class Basics {
 export class Work {
     company: string = "";
     position: string = "";
-    startDate: string = "";
-    endDate: string = "";
+    startDate: Date = new Date();
+    endDate: Date = new Date();
     summary: string = "";
     highlights: string[] = [];
 }

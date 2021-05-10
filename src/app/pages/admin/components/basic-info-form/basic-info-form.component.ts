@@ -1,17 +1,19 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Basics, Resume } from 'src/app/shared/models/resume.model';
+import { Basics } from 'src/app/shared/models/resume.model';
 
 @Component({
   selector: '[app-basic-info-form]',
   templateUrl: './basic-info-form.component.html',
   styleUrls: ['./basic-info-form.component.scss']
 })
-export class BasicInfoFormComponent implements OnInit,OnChanges {
+export class BasicInfoFormComponent implements OnInit, OnChanges {
 
-  @Input() resume: Resume = new Resume();
+  @Input() basics: Basics = new Basics();
+  @Input() username: string = '';
+  @Input() email: string = '';
   @Input() loading: boolean = false;
-  @Output() onSaveResume = new EventEmitter<Resume>();
+  @Output() onSaveBasics = new EventEmitter<any>();
 
   form = new FormGroup({});
   errorMessage: string = '';
@@ -20,10 +22,11 @@ export class BasicInfoFormComponent implements OnInit,OnChanges {
 
   ngOnInit(): void {
     this.buildForm();
+    this.updateForm();
   }
   
   ngOnChanges(): void {
-    if (this.resume) {
+    if (this.basics && this.username) {
       this.updateForm();
     }
   }
@@ -34,7 +37,7 @@ export class BasicInfoFormComponent implements OnInit,OnChanges {
     event.preventDefault();
     if (this.form.valid) {
       this.copyInputsValueOnResume();
-      this.onSaveResume.emit(this.resume);
+      this.onSaveBasics.emit({ basics: this.basics, username: this.username});
       this.loading = false;
     }
     
@@ -55,27 +58,26 @@ export class BasicInfoFormComponent implements OnInit,OnChanges {
 
   updateForm() {
     this.form.patchValue({
-      username: this.resume.username,
-      name: this.resume.basics.name,
-      label: this.resume.basics.label,
-      phone: this.resume.basics.phone,
-      picture: this.resume.basics.picture,
-      summary: this.resume.basics.summary,
-      linkedinUrl: this.resume.basics.linkedinUrl,
-      githubUrl: this.resume.basics.githubUrl,
+      username: this.username,
+      name: this.basics.name,
+      label: this.basics.label,
+      phone: this.basics.phone,
+      picture: this.basics.picture,
+      summary: this.basics.summary,
+      linkedinUrl: this.basics.linkedinUrl,
+      githubUrl: this.basics.githubUrl,
     });
   }
 
   copyInputsValueOnResume() {
-    this.resume.username = this.form.controls['username'].value;
-    this.resume.basics = new Basics();
-    this.resume.basics.name = this.form.controls['name'].value;
-    this.resume.basics.label = this.form.controls['label'].value;
-    this.resume.basics.phone = this.form.controls['phone'].value;
-    this.resume.basics.picture = this.form.controls['picture'].value;
-    this.resume.basics.summary = this.form.controls['summary'].value;
-    this.resume.basics.linkedinUrl = this.form.controls['linkedinUrl'].value;
-    this.resume.basics.githubUrl = this.form.controls['githubUrl'].value;
+    this.username = this.form.controls['username'].value;
+    this.basics.name = this.form.controls['name'].value;
+    this.basics.label = this.form.controls['label'].value;
+    this.basics.phone = this.form.controls['phone'].value;
+    this.basics.picture = this.form.controls['picture'].value;
+    this.basics.summary = this.form.controls['summary'].value;
+    this.basics.linkedinUrl = this.form.controls['linkedinUrl'].value;
+    this.basics.githubUrl = this.form.controls['githubUrl'].value;
   }
 
 }

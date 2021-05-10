@@ -3,7 +3,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 import { faBriefcase, faAddressCard, faDumbbell, faUserGraduate, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Observable, Subscription } from 'rxjs';
 import { ResumeService } from 'src/app/shared/services/resume.service';
-import { Resume } from 'src/app/shared/models/resume.model';
+import { Basics, Resume, Work } from 'src/app/shared/models/resume.model';
 
 @Component({
   selector: 'app-admin',
@@ -65,7 +65,9 @@ export class AdminComponent implements OnInit {
 
   getResumeByEmail(email: string) {
     this.resumeService.getResumeByEmail(email).subscribe((resume: Resume[]) => {
-      this.resume = resume[0];
+      if(resume.length > 0) {
+        this.resume = resume[0];
+      }
     })
   }
 
@@ -78,6 +80,26 @@ export class AdminComponent implements OnInit {
         this.showToast = false;
       }, 2000);
     });
+  }
+
+  onSaveWork(work: Work, index: number) {
+    this.resume.work[index] = work;
+    this.onSaveResume(this.resume);
+  }
+
+  onDeleteWork(index: number) {
+    this.resume.work.splice(index, 1)
+    this.onSaveResume(this.resume);
+  }
+
+  onSaveBasics(data: any) {
+    this.resume.basics = data.basics;
+    this.resume.username = data.username;
+    this.onSaveResume(this.resume);
+  }
+
+  addWork() {
+    this.resume.work.push(new Work())
   }
 
   ngOnDestroy(): void {

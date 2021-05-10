@@ -6,12 +6,14 @@ import { AdminComponent } from './admin.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BasicInfoFormComponent } from './components/basic-info-form/basic-info-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WorkExperienceFormComponent } from './components/work-experience-form/work-experience-form.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     BasicInfoFormComponent,
+    WorkExperienceFormComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

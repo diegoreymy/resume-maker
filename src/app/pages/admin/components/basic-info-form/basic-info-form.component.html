@@ -9,7 +9,7 @@
               <label for="username" class="form-label">Nombre de usuario</label>
               <div class="input-group has-validation">
                 <span class="input-group-text">http://localhost:4200/resume/</span>
-                <input type="text" class="form-control" formControlName="username" [value]="resume?.username ? resume?.username : ''" id="username" >
+                <input type="text" class="form-control" formControlName="username" [value]="username ? username : ''" id="username" >
                 <div class="invalid-feedback">
                   El nombre de usuario es obligatorio.
                 </div>
@@ -17,30 +17,30 @@
             </div>
             <div class="col-sm-6">
               <label for="name" class="form-label">Nombre Completo</label>
-              <input type="text" class="form-control" [value]="resume?.basics?.name" formControlName="name" id="name"  >
+              <input type="text" class="form-control" [value]="basics?.name" formControlName="name" id="name"  >
               <div class="invalid-feedback">
                 Un nombre completo válido es obligatorio.
               </div>
             </div>
             <div class="col-sm-5">
               <label for="label" class="form-label">Rol principal</label>
-              <input type="text" class="form-control" [value]="resume?.basics?.label" formControlName="label" id="label"  >
+              <input type="text" class="form-control" [value]="basics?.label" formControlName="label" id="label"  >
               <div class="invalid-feedback">
                 Un rol principal válido es obligatorio.
               </div>
             </div>
             <div class="col-7">
               <label for="inputEmail" class="form-label">Dirección de correo electrónico</label>
-              <input type="email" readonly [value]="resume?.email" class="form-control" id="inputEmail"
+              <input type="email" readonly [value]="email" class="form-control" id="inputEmail"
                 aria-describedby="emailHelp">
               <div class="invalid-feedback">
                 Un email válido es obligatorio.
               </div>
             </div>
             <div class="col-md-4">
-              <label for="phone" class="form-label">Url de Linkedin</label>
+              <label for="phone" class="form-label">Teléfono</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="resume?.basics?.phone" formControlName="phone" id="phone">
+                <input type="text" class="form-control" [value]="basics?.phone" formControlName="phone" id="phone">
                 <div class="invalid-feedback">
                   Por favor, coloque un teléfono válido.
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-md-4">
               <label for="profile-url-linkedin" class="form-label">Url de Linkedin</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="resume?.basics?.linkedinUrl" formControlName="linkedinUrl" id="profile-url-linkedin">
+                <input type="text" class="form-control" [value]="basics?.linkedinUrl" formControlName="linkedinUrl" id="profile-url-linkedin">
                 <div class="invalid-feedback">
                   Por favor, coloque una url válida.
                 </div>
@@ -58,7 +58,7 @@
             <div class="col-md-4">
               <label for="profile-url-github" class="form-label">Url de GitHub</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" [value]="resume?.basics?.githubUrl" formControlName="githubUrl" id="profile-url-github">
+                <input type="text" class="form-control" [value]="basics?.githubUrl" formControlName="githubUrl" id="profile-url-github">
                 <div class="invalid-feedback">
                   Por favor, coloque una url válida.
                 </div>
@@ -67,7 +67,7 @@
             <div class="col-md-12">
               <label for="summary" class="form-label">Resumen personal</label>
               <div class="input-group">
-                <textarea maxlength="500"  formControlName="summary" [value]="resume?.basics?.summary" class="form-control" id="summary" aria-label="Resumen personal"></textarea>
+                <textarea maxlength="500"  formControlName="summary" [value]="basics?.summary" class="form-control" id="summary" aria-label="Resumen personal"></textarea>
               </div>
             </div>
             <div class="col-md-12">
