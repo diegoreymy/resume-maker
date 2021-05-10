@@ -3,7 +3,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 import { faBriefcase, faAddressCard, faDumbbell, faUserGraduate, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Observable, Subscription } from 'rxjs';
 import { ResumeService } from 'src/app/shared/services/resume.service';
-import { Basics, Resume, Work } from 'src/app/shared/models/resume.model';
+import { Basics, Education, Resume, Work } from 'src/app/shared/models/resume.model';
 
 @Component({
   selector: 'app-admin',
@@ -98,8 +98,22 @@ export class AdminComponent implements OnInit {
     this.onSaveResume(this.resume);
   }
 
+  onSaveEducation(education: Education, index: number) {
+    this.resume.education[index] = education;
+    this.onSaveResume(this.resume);
+  }
+
+  onDeleteEducation(index: number) {
+    this.resume.education.splice(index, 1)
+    this.onSaveResume(this.resume);
+  }
+
   addWork() {
     this.resume.work.push(new Work())
+  }
+
+  addEducation() {
+    this.resume.education.push(new Education())
   }
 
   ngOnDestroy(): void {

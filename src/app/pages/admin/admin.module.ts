@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BasicInfoFormComponent } from './components/basic-info-form/basic-info-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorkExperienceFormComponent } from './components/work-experience-form/work-experience-form.component';
+import { StudiesAndCertificationsFormComponent } from './components/studies-and-certifications-form/studies-and-certifications-form.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { WorkExperienceFormComponent } from './components/work-experience-form/w
     AdminComponent,
     BasicInfoFormComponent,
     WorkExperienceFormComponent,
+    StudiesAndCertificationsFormComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

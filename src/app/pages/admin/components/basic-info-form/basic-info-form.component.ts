@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Basics } from 'src/app/shared/models/resume.model';
+import { Basics, Language } from 'src/app/shared/models/resume.model';
 
 @Component({
   selector: '[app-basic-info-form]',
@@ -10,6 +10,7 @@ import { Basics } from 'src/app/shared/models/resume.model';
 export class BasicInfoFormComponent implements OnInit, OnChanges {
 
   @Input() basics: Basics = new Basics();
+  @Input() languages: Language[] = [new Language()];
   @Input() username: string = '';
   @Input() email: string = '';
   @Input() loading: boolean = false;
@@ -37,7 +38,7 @@ export class BasicInfoFormComponent implements OnInit, OnChanges {
     event.preventDefault();
     if (this.form.valid) {
       this.copyInputsValueOnResume();
-      this.onSaveBasics.emit({ basics: this.basics, username: this.username});
+      this.onSaveBasics.emit({ basics: this.basics, username: this.username, laguages: this.languages});
       this.loading = false;
     }
     
@@ -78,6 +79,14 @@ export class BasicInfoFormComponent implements OnInit, OnChanges {
     this.basics.summary = this.form.controls['summary'].value;
     this.basics.linkedinUrl = this.form.controls['linkedinUrl'].value;
     this.basics.githubUrl = this.form.controls['githubUrl'].value;
+  }
+
+  addLanguage(languages: Language) {
+    this.languages.push(languages)
+  }
+
+  removeLanguage(index: number) {
+    this.languages.splice(index, 1)
   }
 
 }

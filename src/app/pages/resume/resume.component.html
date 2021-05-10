@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-lg-3">
                     <section class="resume-section skills-section mb-5">
-                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Skills</h2>
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Habilidades</h2>
                         <div class="resume-section-content">
                             <div class="resume-skill-item">
                                 <h4 class="resume-skills-cat font-weight-bold">Frontend</h4>
@@ -140,24 +140,23 @@
                         </div><!--resume-section-content-->
                     </section><!--//skills-section-->
                     <section class="resume-section education-section mb-5">
-                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Educação</h2>
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Educación</h2>
                         <div class="resume-section-content">
                             <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <div class="resume-degree font-weight-bold">Ciência da Computação</div>
-                                    <div class="resume-degree-org">Instituto Universitario de la Frontera</div>
-                                    <div class="resume-degree-time">2007 - 2011</div>
+                                <li class="mb-2" *ngFor="let education of resume?.education">
+                                    <div class="resume-degree font-weight-bold">{{education.area}}</div>
+                                    <div class="resume-degree-org">{{education.institution}}</div>
+                                    <div class="resume-degree-org">{{education.studyType}}</div>
+                                    <div class="resume-degree-time">{{education.startDate}} - {{education.endDate}}</div>
                                 </li>
                             </ul>
                         </div>
                     </section><!--//education-section-->
                     <section class="resume-section language-section mb-5">
-                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Línguas</h2>
+                        <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Idiomas</h2>
                         <div class="resume-section-content">
                             <ul class="list-unstyled resume-lang-list">
-                                <li class="mb-2"><span class="resume-lang-name font-weight-bold mr-1">Espanhol</span> <small class="text-muted font-weight-normal">(Nativo)</small></li>
-                                <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold mr-1">Português</span> <small class="text-muted font-weight-normal">(Fluente)</small></li>
-                                <li><span class="resume-lang-name font-weight-bold mr-1">Inglês</span> <small class="text-muted font-weight-normal">(Professional)</small></li>
+                                <li *ngFor="let language of resume.languages" class="mb-2"><span class="resume-lang-name font-weight-bold mr-1">{{language.language}}</span> <small class="text-muted font-weight-normal">({{language.fluency}})</small></li>
                             </ul>
                         </div>
                     </section><!--//language-section-->					    
