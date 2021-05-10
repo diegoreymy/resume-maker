@@ -18,8 +18,12 @@ const routes: Routes = [
       canActivate: [ AdminGuard ]
     },
     {
+      path: 'error',
+      loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)
+    },
+    {
       path: '**',
-      loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+      loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)
     }
 ];
 
